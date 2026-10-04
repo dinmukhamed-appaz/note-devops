@@ -22,7 +22,7 @@ scripts/run.sh
 scripts/test.sh
 ```
 
-The script prints a line like `TESTS: 3/3` at the end.
+The script prints a line like `TESTS: 5/5` at the end.
 
 ## Port
 
