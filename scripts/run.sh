@@ -5,5 +5,6 @@ cd "$(dirname "$0")/.."
 
 export PORT="${PORT:-8080}"
 
-./mvnw -q -DskipTests package
-exec java -jar target/*.jar
+if command -v mvn >/dev/null 2>&1; then MVN=mvn; else MVN=./mvnw; fi
+
+exec "$MVN" -q spring-boot:run
