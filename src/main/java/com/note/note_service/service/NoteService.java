@@ -11,7 +11,9 @@ import java.util.List;
 @Data
 public class NoteService {
 
-    private final List<Note> notes = new ArrayList<>();
+    private final List<Note> notes = new ArrayList<>(
+            List.of(new Note("Default title","Default content"))
+    );
 
     public Note createNote(String title, String content) {
         Note note = new Note(title, content);
