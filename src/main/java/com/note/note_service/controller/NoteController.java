@@ -9,13 +9,22 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/notes")
 public class NoteController {
 
     @Autowired
     private NoteService noteService;
 
-    @GetMapping("/get")
+    @GetMapping("/healthz")
+    public String health() {
+        return "OK";
+    }
+
+    @GetMapping("/")
+    public String home() {
+        return "Note service is running";
+    }
+
+    @GetMapping("/notes")
     public List<Note> getNotes(){
         return noteService.getNotes();
     }
