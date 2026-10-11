@@ -28,7 +28,7 @@ class NoteServiceApplicationTests {
 	void healthz() throws Exception {
 		mockMvc.perform(get("/healthz"))
 				.andExpect(status().isOk())
-				.andExpect(content().string("BROKEN"));
+				.andExpect(content().string("OK"));
 	}
 
 	@Test
