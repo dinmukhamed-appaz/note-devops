@@ -1,0 +1,20 @@
+# M5 starter. Copy to argocd/application.yaml in YOUR project and fill every blank (____).
+# The comment next to a blank is the question. Every blank is a decision from Monday.
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: notes
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/dinmukhamed-appaz/note-devops
+    targetRevision: main
+    path: k8s
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
